@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.ArrayList;      // This question refers. If the same numbers in both string considerde as bulls.
+                                 // If the same number in the same index considered as Cows.
 public class Bulls_cows_leet {
     public static  void main(String[] args) {
 
