@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner;              // Code For get inputs for all data types.
 
 public class A_Get_Input {
     public static void main(String[] args) {
