@@ -9,7 +9,7 @@ public class A_ArrayList_Example {
         numbers.add(10);
         numbers.add(20);
         numbers.add(30);
-        numbers.add(1, 25); // Inserts 25 at index 1
+        numbers.add(1, 25); // inserts 25 at index 1
 
         // Accessing elements
         System.out.println("Element at index 2: " + numbers.get(2));
@@ -18,7 +18,7 @@ public class A_ArrayList_Example {
         numbers.set(1, 50); // Replaces element at index 1 with 50
 
         // Removing an element
-        numbers.remove(2); // Removes element at index 2
+        numbers.remove(2); // Remove element at index 2
 
         // Checking size
         System.out.println("Size: " + numbers.size());
@@ -26,7 +26,7 @@ public class A_ArrayList_Example {
         // Checking if the list contains a value
         System.out.println("Contains 20? " + numbers.contains(20));
 
-        // Printing the list
+        // Print the list
         System.out.println(numbers);
 
 
