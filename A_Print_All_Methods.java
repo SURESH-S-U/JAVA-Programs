@@ -1,4 +1,4 @@
-import java.lang.reflect.Method;
+import java.lang.reflect.Method;     // This functions print all methods for all DataTypes in java.
 import java.util.ArrayList;
 import java.util.Arrays;
                                                         // Same for arrays.

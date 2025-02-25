@@ -41,7 +41,7 @@ public class A_Get_Input {
         System.out.print("Enter a string: ");
         String stringValue = scanner.nextLine();
 
-        // Displaying the Inputs
+        // Displaying & printing the Inputs
         System.out.println("\nYou entered:");
         System.out.println("Integer: " + intValue);
         System.out.println("Float: " + floatValue);

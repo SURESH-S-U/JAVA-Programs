@@ -1,5 +1,5 @@
 import java.util.Scanner;
-                                                        // Question: Increase count If the char in both case in str.
+                            // Question: Increase count If the char in both case in str.
 public class A_String_Upper_lower{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
