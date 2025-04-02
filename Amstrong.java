@@ -1,4 +1,4 @@
-import java.util.*;   // Amstrong means Some of each digits with the power of numbeer of digits. 
+import java.util.*;   // Amstrong means Sum of, each digits with the power of numbeer of digits. 
 
 public class Amstrong{
     public static void main(String[] args){
