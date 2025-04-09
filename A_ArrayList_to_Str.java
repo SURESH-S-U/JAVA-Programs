@@ -7,7 +7,7 @@ public class A_ArrayList_to_Str {
         list.add("Banana");
         list.add("Cherry");
 
-        String result = String.join(", ", list);
+        String result = String.join(",  ", list);
         System.out.println(result);
         // Output: Apple, Banana, Cherry
     }
