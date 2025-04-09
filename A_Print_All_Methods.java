@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class A_Print_All_Methods{
     public static void main(String[] args){
         
-        Method[] methods = ArrayList.class.getMethods();
+        Method[] methods = String.class.getMethods();
 
         for(Method method : methods){
             System.out.println(method.getName());
