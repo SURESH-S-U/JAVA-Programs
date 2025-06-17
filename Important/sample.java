@@ -1,38 +1,35 @@
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
-
-
-public class sample{
-    public static void main(String[] args){
-
-
-        String str1 = "a a a a b b b b";
-
-        ArrayList<String> str2 = new ArrayList<>(Arrays.asList(str1.trim().split("\\s+")));
-        ArrayList<Integer> int2 = new ArrayList<>();
-
-        for(int i =0;i<str2.size();i++)
-        {
-            System.out.println(str2.get(i));
-        }
-
-        for(int i=0;i<str2.size();i++)
-        {
-            int2.add(Collections.frequency(str2,str2.get(i)));
-            
-            for(int j=0;j<str2.size();j++)
-            {
-                if(str2.contains(str2.get(i)))
-                {
-                    str2.remove(str2.get(i));
-                }
+class Solution {
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) {
+            List<Integer> row = new ArrayList<>();
+            row.add(1); 
+            for (int j = 1; j < i; j++) {
+                row.add(result.get(i - 1).get(j - 1) + result.get(i - 1).get(j));
             }
+            if (i > 0) row.add(1); 
+            result.add(row);
         }
+        return result;
+    }
 
-        System.out.print(int2);
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of rows for Pascal's Triangle:");
+        int numRows = sc.nextInt();
+        
+        Solution solution = new Solution();
+        List<List<Integer>> result = solution.generate(numRows);
+        
+        System.out.println("Pascal's Triangle with " + numRows + " rows:");
+        for (List<Integer> row : result) {
+            System.out.println(row);
+        }
+        
+        sc.close();
     }
 }
