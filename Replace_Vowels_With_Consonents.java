@@ -3,32 +3,32 @@ import java.util.*;
 
 public class Replace_Vowels_With_Consonents{
 
-    public static boolean CheckVowels(char c)
-    {
-        return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
-    }
+
 
     public static void main(String[] args){
         
         Scanner sc = new Scanner(System.in);
 
-        String str = sc.nextLine();
+        String str = sc.next();
+        int size = str.length();
+        int[] arr = new int[size];
 
-        StringBuilder sb = new StringBuilder(str);
-
-        int ind = 0;
-
-        StringBuilder sb2 = new StringBuilder("bcdfghjklmnpqrstvwxyz");
-
-        for(int i=0;i<str.length();i++)
+        for(int i=0;i<size;i++)
         {
-            if(CheckVowels(sb.charAt(i)))
-            {
-                sb.setCharAt(i,sb2.charAt(ind++));
-            }
+            arr[i] = str.charAt(i) - '0';
         }
 
-        System.out.println("String Builder : "+sb);
+        int k = sc.nextInt();
+        int sum = 0;
+        for(int i=0;i<size;i++)
+        {
+            sum = 0;
+            for(int j=i;j<i+k;j++)
+            {
+                sum += arr[j];
+            }
+            System.out.println("Sum "+(i+1)+" : "+sum);
+        }
 
     }
 }
