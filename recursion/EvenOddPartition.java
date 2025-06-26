@@ -6,9 +6,14 @@ public class EvenOddPartition {
 	{
 		if(x==arr.length) return;
 		
-		if(even && arr[x]%2==0) System.out.print(arr[x]+" ");
-		else if(!even && arr[x]%2!=0) System.out.print(arr[x]+" ");
-		
+		if(even && arr[x]%2==0) 
+		{
+			System.out.print(arr[x]+" ");
+		}
+		else if(!even && arr[x]%2!=0) 
+		{
+			System.out.print(arr[x]+" ");
+		}
 		eo(arr,x+1,even);
 	}
 

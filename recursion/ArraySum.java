@@ -1,9 +1,11 @@
 package recursion;
 import java.util.Scanner;
+
 public class ArraySum {
 	public static int sum(int[] arr,int i)
 	{
 		if(i==arr.length) return 0;
+		
 		return arr[i]+sum(arr,i+1);
 	}
 

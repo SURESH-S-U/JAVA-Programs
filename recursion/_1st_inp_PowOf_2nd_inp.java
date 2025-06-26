@@ -10,7 +10,6 @@ public class _1st_inp_PowOf_2nd_inp{
             return 1; 
         }
         
-
         return n1*func(n1,n2-1);
 
     }
