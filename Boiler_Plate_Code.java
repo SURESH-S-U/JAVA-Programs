@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Boiler_Plate_Code{
+public class sample{
 
     public static void main(String[] args){
 
