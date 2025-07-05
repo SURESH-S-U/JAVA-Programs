@@ -46,7 +46,7 @@ public class Singly_LinkedList {
         }
 
         if (idx == 0) {
-            insertBgn(x);
+            insertBgn(x);         // Calling the InsertBegining Function to insert at index 0;
             return;
         }
 
@@ -75,7 +75,7 @@ public class Singly_LinkedList {
 
         if (idx == 0) {
             System.out.println("Element: " + head.data + " deleted.");
-            head = head.next;
+            head = head.next;                         // To make the Head null. So no more values....
             return;
         }
 
@@ -124,7 +124,6 @@ public class Singly_LinkedList {
         Scanner sc = new Scanner(System.in);
         Singly_LinkedList obj = new Singly_LinkedList();
 
-        while (true) {
             System.out.println("\n--- Singly Linked List Menu ---");
             System.out.println("0: Insert at End");
             System.out.println("1: Insert at Beginning");
@@ -134,6 +133,8 @@ public class Singly_LinkedList {
             System.out.println("5: Display the List");
             System.out.println("6: Exit");
             System.out.print("Enter your choice: ");
+            
+        while (true) {
             int inp = sc.nextInt();
 
             switch (inp) {
