@@ -1,7 +1,7 @@
 import java.util.*;
 
-class Node2 {                       // Additional 3 Features..... with Optimized solution.
-    int data;                      // Find Middle Element  ,  Remove Duplicates  ,  Print in reverse Order , Sorting the list.
+class Node2 {                // Additional 3 Features..... with Optimized solution.
+    int data;                // Find Middle Element  ,  Remove Duplicates  ,  Print in reverse Order , Sorting the list.
     Node2 next;
 
     Node2(int x) {
@@ -128,7 +128,26 @@ public class Singly_LinkedList_WithAdditionalFeatures {
 
     }
 
-    public void SortList(){
+    public void SortList(){                     // Using Bubble Sort.
+        Node2 temp1 = head;                     // Time complexity O(n^2).
+        while(temp1.next != null)
+        {
+            Node2 temp2 = head;
+            while(temp2.next != null)
+            {
+                if(temp2.data > temp2.next.data)  // Compare each Data with their Adjacent data for n times.
+                {
+                    int tempData = temp2.data;
+                    temp2.data = temp2.next.data;
+                    temp2.next.data = tempData;
+                }
+
+                temp2 = temp2.next;
+            }
+            temp1 = temp1.next;
+        }
+
+        display();
 
     }
 
