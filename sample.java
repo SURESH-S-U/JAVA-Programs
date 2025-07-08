@@ -1,35 +1,57 @@
-import java.util.*;
-
-class Node{
+class Node5{
     int data;
-    Node next;
+    Node5 next;
+    Node5 prev;
 
-    Node(int x){
-        this.data = x;
-        this.next= null;
+    Node5(int data)
+    {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
     }
 }
 
-public class sample{
+class sample{
+    Node5 head = null;
+    Node5 tail = null;
 
-    Node head;
+    public void addEnd(int data){
+        Node5 newNode = new Node5(data);
 
-    public void insertBigining(int x)
-    {
-        Node newNode = new Node(x);
         if(head == null)
         {
-            head = newNode;
+            head = tail = newNode;
+            head.next = head.prev = head;
             return;
         }
 
+        tail.next = newNode;
+        newNode.prev = tail;
         newNode.next = head;
+        head.prev = newNode;
+        tail = newNode;
+    }
+
+    public void addStart(int data){
+        Node5 newNode = new Node5(data);
+
+        if(head == null)
+        {
+            head = tail = newNode;
+            head.next = head.prev = head;
+            return;
+        }
+        newNode.next = head;
+        head.prev = newNode;
+        tail.next = newNode;
+        newNode.prev = tail;
         head = newNode;
     }
-    
-    public static void main(String[] args)
-    {
-        Scanner sc = new Scanner(System.in);
+
+    public void insertIndex(int data){
+        Node5 newNode = new Node5(data);
+        Node5 temp = head;
+        
     }
 
 }
