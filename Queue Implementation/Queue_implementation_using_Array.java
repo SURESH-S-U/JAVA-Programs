@@ -4,7 +4,7 @@ class queue_Operations {
     private int rear;
     private int size;
 
-    queue_Operations(int size) {
+    queue_Operations(int size){
         a = new int[size];
         this.size = size;
         this.rear = -1;
