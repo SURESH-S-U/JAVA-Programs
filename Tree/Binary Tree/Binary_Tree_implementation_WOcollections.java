@@ -15,7 +15,7 @@ public class Binary_Tree_implementation_WOcollections {
     Node root;
 
     public void insert(int data) {
-        root = insertData(root, data);      // Assigned to root is necessary.
+        root = insertData(root, data);      // Assigned to root is necessary. if we didn't reassign to the root , it only change local copy not the tree.
     }                                       // This is necessary because Java is pass-by-value, and when we create or modify the tree nodes recursively, the new root (or any modified child) must be reassigned to the correct parent link (including the root of the entire tree).
     public Node insertData(Node root, int data) {
         if (root == null) {

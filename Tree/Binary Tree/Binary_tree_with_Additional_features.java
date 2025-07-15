@@ -10,7 +10,7 @@ class Node10 {
     }
 }
 
-public class Binary_tree_with_Additional_features{
+public class Binary_tree_with_Additional_features {
 
     Node10 root;
 
@@ -32,48 +32,6 @@ public class Binary_tree_with_Additional_features{
         return root;
     }
 
-    public void inOrder_Trav() {
-        System.out.print("In-order Traversal: ");
-        inOrder(root);
-        System.out.println();
-    }
-
-    public void inOrder(Node10 root) {
-        if (root != null) {
-            inOrder(root.left);
-            System.out.print(root.data + " ");
-            inOrder(root.right);
-        }
-    }
-
-    public void preOrder_Trav() {
-        System.out.print("Pre-order Traversal: ");
-        preOrder(root);
-        System.out.println();
-    }
-
-    public void preOrder(Node10 root) {
-        if (root != null) {
-            System.out.print(root.data + " ");
-            preOrder(root.left);
-            preOrder(root.right);
-        }
-    }
-
-    public void postOrder_Trav() {
-        System.out.print("Post-order Traversal: ");
-        postOrder(root);
-        System.out.println();
-    }
-
-    public void postOrder(Node10 root) {
-        if (root != null) {
-            postOrder(root.left);
-            postOrder(root.right);
-            System.out.print(root.data + " ");
-        }
-    }
-
     public boolean search(int key) {
         return searchNode(root, key);
     }
@@ -92,6 +50,7 @@ public class Binary_tree_with_Additional_features{
         }
     }
 
+    // ✅ Count total nodes
     public int countNodes() {
         return count(root);
     }
@@ -101,6 +60,34 @@ public class Binary_tree_with_Additional_features{
             return 0;
         }
         return 1 + count(root.left) + count(root.right);
+    }
+
+    // ✅ Count parent nodes (nodes with at least one child)
+    public int countParentNodes() {
+        return countParents(root);
+    }
+
+    private int countParents(Node10 node) {
+        if (node == null) return 0;
+
+        if (node.left != null || node.right != null)
+            return 1 + countParents(node.left) + countParents(node.right);
+
+        return countParents(node.left) + countParents(node.right);
+    }
+
+    // ✅ Count leaf nodes (nodes with no children)
+    public int countLeafNodes() {
+        return countLeaves(root);
+    }
+
+    private int countLeaves(Node10 node) {
+        if (node == null) return 0;
+
+        if (node.left == null && node.right == null)
+            return 1;
+
+        return countLeaves(node.left) + countLeaves(node.right);
     }
 
     public int sumOfNodes() {
@@ -114,6 +101,54 @@ public class Binary_tree_with_Additional_features{
         return root.data + sum(root.left) + sum(root.right);
     }
 
+    // ✅ Delete a node from BST
+    public void delete(int key) {
+        root = deleteNode(root, key);
+    }
+
+    private Node10 deleteNode(Node10 root, int key) {
+        if (root == null) {
+            return null;
+        }
+
+        if (key < root.data) {                          
+            root.left = deleteNode(root.left, key);    // It will link the returned node to the current node.
+        } 
+
+        else if (key > root.data) {
+            root.right = deleteNode(root.right, key);
+        }
+        
+        else {                             // It will exicute when the curren node is the node to be deleted.
+
+            // Case 1: No child
+            if (root.left == null && root.right == null) {
+                return null;
+            }
+
+            // Case 2: One child
+            if (root.left == null) {
+                return root.right;                 // If only right child , then remove the node and link the right child directly.
+            } else if (root.right == null) {       // this will return to the previous call then change the value.
+                return root.left;
+            }
+
+            // Case 3: Two children
+            Node10 successor = findMin(root.right);
+            root.data = successor.data;                      // It is used to copy the right sub trees smallest value.
+            root.right = deleteNode(root.right, successor.data); // it is used to delete the previous place of the changed node.
+        }
+
+        return root;
+    }
+
+    private Node10 findMin(Node10 root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Binary_tree_with_Additional_features tree = new Binary_tree_with_Additional_features();
@@ -121,13 +156,13 @@ public class Binary_tree_with_Additional_features{
         int choice, value;
         while (true) {
             System.out.println("\n1. Insert");
-            System.out.println("2. In-order Traversal");
-            System.out.println("3. Pre-order Traversal");
-            System.out.println("4. Post-order Traversal");
-            System.out.println("5. Exit");
-            System.out.println("6. Search");
-            System.out.println("7. Count Nodes");
-            System.out.println("8. Sum of Nodes");
+            System.out.println("2. Search");
+            System.out.println("3. Count All Nodes");
+            System.out.println("4. Sum of Nodes");
+            System.out.println("5. Delete Node");
+            System.out.println("6. Count Parent Nodes");
+            System.out.println("7. Count Leaf Nodes");
+            System.out.println("8. Exit");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
@@ -139,23 +174,6 @@ public class Binary_tree_with_Additional_features{
                     break;
 
                 case 2:
-                    tree.inOrder_Trav();
-                    break;
-
-                case 3:
-                    tree.preOrder_Trav();
-                    break;
-
-                case 4:
-                    tree.postOrder_Trav();
-                    break;
-
-                case 5:
-                    System.out.println("Exiting...");
-                    sc.close();
-                    return;
-
-                case 6:
                     System.out.print("Enter value to search: ");
                     value = sc.nextInt();
                     if (tree.search(value)) {
@@ -165,13 +183,33 @@ public class Binary_tree_with_Additional_features{
                     }
                     break;
 
-                case 7:
+                case 3:
                     System.out.println("Total number of nodes: " + tree.countNodes());
                     break;
 
-                case 8:
+                case 4:
                     System.out.println("Sum of all node values: " + tree.sumOfNodes());
                     break;
+
+                case 5:
+                    System.out.print("Enter value to delete: ");
+                    value = sc.nextInt();
+                    tree.delete(value);
+                    System.out.println(value + " deleted from the tree (if it existed).");
+                    break;
+
+                case 6:
+                    System.out.println("Total number of parent nodes: " + tree.countParentNodes());
+                    break;
+
+                case 7:
+                    System.out.println("Total number of leaf nodes: " + tree.countLeafNodes());
+                    break;
+
+                case 8:
+                    System.out.println("Exiting...");
+                    sc.close();
+                    return;
 
                 default:
                     System.out.println("Invalid choice!");
