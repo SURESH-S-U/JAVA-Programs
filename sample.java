@@ -1,39 +1,36 @@
 import java.util.*;
 
+class Node10{
+    int data;
+    Node left;
+    Node right;
+
+    Node10(int data)
+    {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+
 public class sample{
 
-    public static void main(String[] args){
+    Node10 root;
 
-        Queue<Integer> q = new LinkedList<>();
-        Queue<Integer> q2 = new LinkedList<>();
-        Queue<Integer> res = new LinkedList<>();
-
-        q.offer(10);
-        q.offer(20);
-        q.offer(30);
-        q.offer(40);
-        q.offer(50);
-        q.offer(60);
-
-        int size = q.size();
-        if(q.size()%2 != 0)
-        {
-            System.out.println("Cant perform this operation");
-            return;
-        }
-
-        for(int i=0;i<size/2;i++)
-        {
-            q2.offer(q.poll());
-        }
-
-        for(int i=0;i<size/2;i++)
-        {
-            res.offer(q2.poll());
-            res.offer(q.poll());
-        }
-
-        System.out.println(res);
+    public insert(int data)
+    {
+        Node10 root = insertData(root,data);
     }
 
+    public  Node10 insertData(Node root, int data)
+    {
+        
+    }
+
+
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+    }
 }
