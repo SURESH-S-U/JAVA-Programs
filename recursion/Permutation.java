@@ -28,7 +28,7 @@ public class Permutation{
         Scanner sc = new Scanner(System.in);
 
         String str = sc.nextLine();
-        String temp  = " ";
+        String temp  = "";
 
         permutation(str , temp);
 
