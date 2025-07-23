@@ -1,9 +1,9 @@
-public class UndirectedGraph {
+public class Directed_And_Undirected {
     private int vertices;
     private int[][] adjMatrix;
 
     // Constructor
-    public UndirectedGraph(int v) {
+    public Directed_And_Undirected(int v) {
         vertices = v;
         adjMatrix = new int[vertices][vertices]; // Initializes all values to 0
     }
@@ -27,10 +27,10 @@ public class UndirectedGraph {
 
     // Main
     public static void main(String[] args) {
-        UndirectedGraph g = new UndirectedGraph(4);
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
+        Directed_And_Undirected g = new Directed_And_Undirected(4);
+        g.addEdge(5, 2);
+        g.addEdge(3, 5);
+        g.addEdge(9, 5);
         g.addEdge(2, 3);
 
         g.printGraph();
