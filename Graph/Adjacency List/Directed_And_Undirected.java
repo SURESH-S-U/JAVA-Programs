@@ -16,7 +16,7 @@ public class Graph {
     // Add an edge (undirected)
     public void addEdge(String src, String dest) {
         adjList.putIfAbsent(src, new ArrayList<>());
-        adjList.putIfAbsent(dest, new ArrayList<>());
+        adjList.putIfAbsent(dest, new ArrayList<>());  //  Just remove this line to make as Directed graph.
         adjList.get(src).add(dest);
         adjList.get(dest).add(src); // Just remove this line for directed graph
     }
