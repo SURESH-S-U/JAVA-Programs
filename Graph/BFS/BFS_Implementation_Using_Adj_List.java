@@ -1,44 +1,34 @@
+import java.util.*;
 
-static Queue<Innteger> q = new Queue<>();
-Static ArrayList<Boolean> arr = new LinkedList<>();
-
-public static BFS (int start)
-{
-    q.add(start);
-    arr[start] = false;
-
-    while(! q.isEmpty())
-    {
-        int val = q.remove();
-        for(int v : graph.get(val))
-    }
-}import java.util.*;
-
-public class GraphBFS {
+public class BFS_Implementation_Using_Adj_List {
+    
     private Map<String, ArrayList<String>> adjList;
 
-    public GraphBFS() {
+    // Constructor
+    public BFS_Implementation_Using_Adj_List() {
         adjList = new HashMap<>();
     }
 
-    // Add vertex
+    // Add a vertex to the graph
     public void addVertex(String vertex) {
         adjList.putIfAbsent(vertex, new ArrayList<>());
     }
 
-    // Add edge (Undirected)
+    // Add an undirected edge between two vertices
     public void addEdge(String src, String dest) {
         adjList.get(src).add(dest);
         adjList.get(dest).add(src);
     }
 
-    // BFS traversal
+    // Perform BFS traversal from a given start node
     public void bfs(String start) {
         Set<String> visited = new HashSet<>();
         Queue<String> queue = new LinkedList<>();
 
         visited.add(start);
         queue.offer(start);
+
+        System.out.print("BFS Traversal starting from " + start + ": ");
 
         while (!queue.isEmpty()) {
             String current = queue.poll();
@@ -53,8 +43,9 @@ public class GraphBFS {
         }
     }
 
+    // Main method
     public static void main(String[] args) {
-        GraphBFS graph = new GraphBFS();
+        BFS_Implementation_Using_Adj_List graph = new BFS_Implementation_Using_Adj_List();
 
         // Add vertices
         graph.addVertex("A");
@@ -69,8 +60,7 @@ public class GraphBFS {
         graph.addEdge("B", "D");
         graph.addEdge("C", "E");
 
-        // Perform BFS from node A
-        System.out.print("BFS Traversal starting from A: ");
+        // Perform BFS
         graph.bfs("A");
     }
 }
