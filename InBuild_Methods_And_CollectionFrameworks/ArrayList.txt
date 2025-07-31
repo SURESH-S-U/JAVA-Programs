@@ -1,0 +1,37 @@
+| Method                            | Description                                     | Example                          |
+| --------------------------------- | ----------------------------------------------- | -------------------------------- |
+| `add(E e)`                        | Adds element to the end                         | `list.add("Apple");`             |
+| `add(int index, E e)`             | Adds element at a specific index                | `list.add(1, "Banana");`         |
+| `get(int index)`                  | Returns element at given index                  | `list.get(0);`                   |
+| `set(int index, E e)`             | Replaces element at given index                 | `list.set(0, "Mango");`          |
+| `remove(int index)`               | Removes element at index                        | `list.remove(2);`                |
+| `remove(Object o)`                | Removes first occurrence of object              | `list.remove("Banana");`         |
+| `size()`                          | Returns number of elements                      | `list.size();`                   |
+| `isEmpty()`                       | Checks if ArrayList is empty                    | `list.isEmpty();`                |
+| `contains(Object o)`              | Checks if element exists                        | `list.contains("Apple");`        |
+| `indexOf(Object o)`               | Returns first index of element, -1 if not found | `list.indexOf("Apple");`         |
+| `lastIndexOf(Object o)`           | Returns last index of element                   | `list.lastIndexOf("Apple");`     |
+| `clear()`                         | Removes all elements                            | `list.clear();`                  |
+| `toArray()`                       | Converts to array                               | `Object[] arr = list.toArray();` |
+| `ensureCapacity(int minCapacity)` | Increases capacity of ArrayList                 | `list.ensureCapacity(20);`       |
+| `trimToSize()`                    | Trims unused memory                             | `list.trimToSize();`             |
+
+
+
+
+
+| Method                                         | Description                            | Example                                               |
+| ---------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
+| `Collections.sort(list)`                       | Sorts list in ascending order          | `Collections.sort(list);`                             |
+| `Collections.sort(list, Comparator)`           | Sorts with custom comparator           | `Collections.sort(list, Collections.reverseOrder());` |
+| `Collections.reverse(list)`                    | Reverses the order                     | `Collections.reverse(list);`                          |
+| `Collections.shuffle(list)`                    | Randomly shuffles elements             | `Collections.shuffle(list);`                          |
+| `Collections.swap(list, i, j)`                 | Swaps elements at given indices        | `Collections.swap(list, 0, 2);`                       |
+| `Collections.max(list)`                        | Returns max element                    | `Collections.max(list);`                              |
+| `Collections.min(list)`                        | Returns min element                    | `Collections.min(list);`                              |
+| `Collections.frequency(list, obj)`             | Counts occurrences of an element       | `Collections.frequency(list, "Apple");`               |
+| `Collections.fill(list, obj)`                  | Replaces all elements with given value | `Collections.fill(list, 0);`                          |
+| `Collections.copy(dest, src)`                  | Copies all elements from src to dest   | `Collections.copy(dest, src);`                        |
+| `Collections.replaceAll(list, oldVal, newVal)` | Replaces all occurrences               | `Collections.replaceAll(list, "A", "B");`             |
+| `Collections.unmodifiableList(list)`           | Returns a read-only list               | `Collections.unmodifiableList(list);`                 |
+| `Collections.binarySearch(list, key)`          | Searches element in **sorted list**    | `Collections.binarySearch(list, 10);`                 |
