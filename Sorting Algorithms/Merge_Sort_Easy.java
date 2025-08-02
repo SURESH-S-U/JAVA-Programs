@@ -15,11 +15,11 @@ public class Merge_Sort_Easy
         int[] right = Merge_Sort(Arrays.copyOfRange(arr , mid , arr.length));
 
         // Merge the two sorted halves and return the result
-        return Merge(left , right);
+        return Merge_Function(left , right);
     }
 
     // Function to merge two sorted arrays into a single sorted array
-    public static int[] Merge(int[] left , int[] right)
+    public static int[] Merge_Function(int[] left , int[] right)
     {
         int[] joined = new int[left.length + right.length]; // Final merged array
 
