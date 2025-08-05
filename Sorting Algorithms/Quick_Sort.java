@@ -4,17 +4,15 @@ public class Quick_Sort {
 
     // QuickSort function
     public static void Quick(int[] arr, int low, int high) {
-        // Base condition: Only sort if the subarray has 2 or more elements
-        if (low < high) {
+
+        if (low < high) {  // Base condition: Only sort if the subarray has 2 or more elements 
             
-            // Partition the array and get the pivot's correct position
-            int pi_index = partition(arr, low, high);
+            int pi_index = partition(arr, low, high);    // Partition the array and get the pivot's correct position
 
-            // Recursively sort the left subarray (elements before pivot)
-            Quick(arr, low, pi_index - 1);
+            Quick(arr, low, pi_index - 1);  // Recursively sort the left subarray (elements before pivot)
 
-            // Recursively sort the right subarray (elements after pivot)
-            Quick(arr, pi_index + 1, high);
+            Quick(arr, pi_index + 1, high);    // Recursively sort the right subarray (elements after pivot)
+
         }
     }
 
@@ -25,13 +23,14 @@ public class Quick_Sort {
         int j = high;          // Start from the last element
 
         while (true) {
-            // Move i to the right until we find a value greater than pivot
-            while (i <= j && arr[i] <= pivot) {
-                i++;
+
+            while (i <= j && arr[i] <= pivot) {   // Move i to the right until we find a value greater than pivot
+
+                i++;      
             }
 
-            // Move j to the left until we find a value smaller or equal to pivot
-            while (i <= j && arr[j] > pivot) {
+            while (i <= j && arr[j] > pivot) {    // Move j to the left until we find a value smaller or equal to pivot
+
                 j--;
             }
 

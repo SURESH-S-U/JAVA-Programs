@@ -9,6 +9,8 @@ public class InsertionSort {
             int key = arr[i];
             int j = i - 1;
 
+            if (arr[j] <= key) continue;   // For Optimize the code.  If arr[j] < key means Key is already in correct position.
+
             // Shift elements greater than key to the right
             while (j >= 0 && arr[j] > key) {
                 arr[j + 1] = arr[j];
