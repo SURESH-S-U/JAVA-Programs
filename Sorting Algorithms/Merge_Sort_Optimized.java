@@ -4,7 +4,7 @@ public class Merge_Sort_Optimized {
 
     // Main Merge Sort function
     // start -> starting index (inclusive)
-    // end   -> ending index (exclusive)
+    // end   -> ending index (exclusive)    End must be one index extra.-> arr.length
 
     public static void Merge_Sort(int[] arr, int start, int end) {
 
