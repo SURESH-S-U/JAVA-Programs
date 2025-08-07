@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class Combination_Rec{
+public class Combination__Rec{
 
     static void com(String str,String temp, int index)
     {
@@ -9,7 +9,6 @@ public class Combination_Rec{
         System.out.println(temp);
         if(index == str.length())
         {
-
             return;
         }
 

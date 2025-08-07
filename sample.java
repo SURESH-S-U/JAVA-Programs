@@ -1,29 +1,35 @@
-import java.util.*;
+public class sample {
+    public static int largestSumAfterKNegations(int[] arr, int k) {
 
-public class sample{
+        for(int i=0;i<k;i++)
+        {
+            int min = 0;
 
-    public static void Merge_Sort(int[] arr , int n)
-    {
+            for(int j=0;j<arr.length;j++)
+            {
+                if(arr[j] < arr[min])
+                {
+                    min = j;
+                }
+            }
+            arr[min] = -arr[min];
+        }
 
+        int sum = 0;
+        for(int i=0;i<arr.length;i++)
+        {
+            sum += arr[i];
+        }
+
+        return sum;
     }
-
-
+    
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-
-        for(int i=0;i<n;i++)
-        {
-            arr[i] = sc.nextInt();
-        }
-
-        Merge_Sort(arr , n);
-
-        for(int i=0;i<n;i++)
-        {
-            System.out.print(arr[i] + " ");
-        }
+        int[] arr = {4,2,3};
+        int k = 1;
+        
+        System.out.println(largestSumAfterKNegations(arr , k));
+        
     }
 }
