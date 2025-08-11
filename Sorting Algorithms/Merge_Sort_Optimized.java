@@ -11,7 +11,7 @@ public class Merge_Sort_Optimized {
         if (end - start == 1) return;   // Base case: if subarray has 1 element, it is already sorted
 
         int mid = (start + end) / 2;   // Find the middle index
-
+        
         Merge_Sort(arr, start, mid); // Recursively sort the left half [start, mid)
 
         Merge_Sort(arr, mid, end);    // Recursively sort the right half [mid, end)
@@ -62,7 +62,7 @@ public class Merge_Sort_Optimized {
 
     // Main Method
     public static void main(String[] args) {
-        int[] arr = {1, 7, 3, 2, 6, 4};
+        int[] arr = {1,2,3,4,5};
 
         Merge_Sort(arr, 0, arr.length);  // Sort the whole array
 
