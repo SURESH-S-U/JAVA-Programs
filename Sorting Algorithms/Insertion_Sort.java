@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class InsertionSort {
+public class Insertion_Sort {
     public static void main(String[] args) {
         int[] arr = {1, 5, 3, 9, 7, 8};
         int n = arr.length;

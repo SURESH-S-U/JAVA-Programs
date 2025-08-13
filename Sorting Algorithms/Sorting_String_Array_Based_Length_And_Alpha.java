@@ -26,7 +26,7 @@ public class sample {
                 // compareTo returns:
                 //   negative if a < b
                 //   zero if a == b
-                //   positive if a > b
+                //   positive if a > b         
                 
 
             // Step 3: If lengths are not equal, return length comparison result
