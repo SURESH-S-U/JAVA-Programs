@@ -9,7 +9,7 @@ public class Merge_Sort_Print_Partiotion_Index {
         else
             System.out.println(start);
 
-        if (end - start == 1) return; // Base case: single element
+        if (end - start <= 2) return; // Base case: single element
 
         int len = end - start;
         int mid;
@@ -52,7 +52,7 @@ public class Merge_Sort_Print_Partiotion_Index {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 3, 9, 4,7,12,7,9};
+        int[] arr = {1, 3, 9, 4,7,12,7 , 5,9};
 
         Merge_Sort(arr, 0, arr.length);
 
