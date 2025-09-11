@@ -67,6 +67,6 @@ public class Merge_Sort_Optimized {
         Merge_Sort(arr, 0, arr.length);  // Sort the whole array
 
         // Print the sorted array
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));      
     }
 }

@@ -6,6 +6,7 @@ public class sample {
     {
         int len = end - start;
         if(len == 1) return;
+        
         int mid;
 
         if(len % 2 == 0)

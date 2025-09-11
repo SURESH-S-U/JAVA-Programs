@@ -22,6 +22,7 @@ public class Binary_Search {
         int[] numbers = {2, 45, 8, 17, 16, 23, 38, 56};
         Arrays.sort(numbers);
         System.out.println(Arrays.toString(numbers));
+        
         int key = 23;
 
         int result = binarySearch(numbers, key);

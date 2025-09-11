@@ -12,7 +12,7 @@ public class Quick_Sort_String_Based_Len_And_Ascii {
 
     public static int Partition(String[] arr , int low , int high) {
         String pivot = arr[low];
-        int i = low + 1;
+        int i = low + 1;    
         int j = high;
 
         while(true) {
