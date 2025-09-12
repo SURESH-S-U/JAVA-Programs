@@ -1,0 +1,12 @@
+char name[50];  // can store up to 49 characters + '\0'
+
+
+printf("Enter your name: ");
+scanf("%s", name);  // reads input until space/newline
+printf("You entered: %s\n", name);
+
+
+
+printf("Enter your full name: ");
+scanf(" %[^\n]", name);  // reads until newline
+printf("You entered: %s\n", name);
