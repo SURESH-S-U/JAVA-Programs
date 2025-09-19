@@ -1,4 +1,6 @@
+
 char name[50];  // can store up to 49 characters + '\0'
+
 
 
 printf("Enter your name: ");
