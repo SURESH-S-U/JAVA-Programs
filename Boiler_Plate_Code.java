@@ -9,7 +9,6 @@ public class sample{
         int num = sc.nextInt();
         
         String str = sc.nextLine();
-
     }
 
 }
