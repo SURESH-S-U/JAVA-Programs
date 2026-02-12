@@ -24,7 +24,7 @@ public class CharacterFrequency{
 
         String str = sc.nextLine();
 
-        Set<Character> visited = new HashSet<>();   // Used to avoid Duplicate elements;
+        Set<Character> visited = new HashSet<>();   // Used to avoid Duplicate elements;  
 
         for(int i=0;i<str.length();i++)
         {  
