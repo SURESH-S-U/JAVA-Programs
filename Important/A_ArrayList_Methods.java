@@ -15,8 +15,8 @@ public class A_ArrayList_Methods {
 
         // 3. Adding element at a specific index
         numbers.add(1, 15);
-        System.out.println("After adding 15 at index 1: " + numbers); // [10, 15, 20, 30]
-
+        System.out.println("After adding 15 at index 1:   " + numbers); // [10, 15, 20, 30]
+   
         // 4. Accessing elements
         System.out.println("Element at index 2: " + numbers.get(2)); // 20
 
