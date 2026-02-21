@@ -5,7 +5,6 @@ public class Combination__Rec{
 
     static void com(String str,String temp, int index)
     {
-        
         System.out.println(temp);
         if(index == str.length())
         {
@@ -17,8 +16,6 @@ public class Combination__Rec{
             char c = str.charAt(i);
             com(str,temp+c,i+1);
         }
-
-
     }
 
     public static void main(String[] args){
@@ -28,6 +25,5 @@ public class Combination__Rec{
         String str = sc.nextLine();
 
         com(str,"",0);
-
     }
 }
