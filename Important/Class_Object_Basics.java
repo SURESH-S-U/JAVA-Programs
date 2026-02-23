@@ -31,9 +31,20 @@ public class Class_Object_Basics{
 
     }
 
+    // Instance Method(non static) - Cant call without creating object.
+    void summa(){
+        System.out.println("Naa Summa irukkaren");
+    }
+
+    // Static method can call without creating onject.
+    static void play(){
+        System.out.println("I am Playing");
+    }
+
     
     public static void main(String[] args){
 
+        // This is a static class - So that we can call  without we can call it without creating object for Main public Main class.
         Students s1 = new Students();                // Creating object - calling default constructor.
         Students s2 = new Students("suresh",101,21); // Creating object - calling parameterized constructor.
 
@@ -42,5 +53,11 @@ public class Class_Object_Basics{
         System.out.println("Name : "+s2.name+" Roll : "+s2.roll+" Age : "+s2.age);
         System.out.println("Name : "+s2.name+" Roll : "+s2.roll+" Age : "+s2.age+" School : "+s2.school+" Location : "+s2.location);
 
+        // Instance Method calling
+        sample sam = new sample();
+        sam.summa();
+
+        // Static method calling
+        play();
     }
 }
