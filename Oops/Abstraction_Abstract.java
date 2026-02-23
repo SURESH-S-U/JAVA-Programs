@@ -3,7 +3,11 @@ import java.util.*;
 // Abstraction - Hiding Implementation details and showing only necessary details.
 // Acieveed by 2 keywords - abstract , interface.
 
+// It allows abstract methods , concrete methods and Constructors inside abstract class. But interface dont allow concrete and Constructors.
+
 // Abstract key word.
+
+// Uses "extends" keyword for inherit properties.
 
 
 // Abstract class
