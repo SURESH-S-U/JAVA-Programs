@@ -2,7 +2,7 @@ import java.util.*;
 
 
 // Note *************
-// Two Steps to Implement ENcapsulation.
+// Two Steps to Implement Encapsulation.
 // 1. Make the variables Private. It only used to Protect the data, So dont change the method as Private.
 // 2. Define Getter and Setter to access the private contents. So that the data will be safe.
 
