@@ -37,5 +37,6 @@ public class HashMap_Basics {
         System.out.println(map.size());
 
         System.out.println(map.getOrDefault("Apple",0));
+
     }
 }

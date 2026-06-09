@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class SpiralTraversal {
+public class Spiral_Traversal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

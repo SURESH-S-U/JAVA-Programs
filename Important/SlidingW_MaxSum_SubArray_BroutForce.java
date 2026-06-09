@@ -9,6 +9,7 @@ public class sample{
         int[] arr = {1,2,3,16,5,18,7,8,9};
 
         int k = sc.nextInt();
+        
         int Max = 0;
         int idx = 0;
 
@@ -20,7 +21,7 @@ public class sample{
         int temp = Max;
 
 
-        for(int i = k; i<= arr.length -1 ;i++)
+        for(int i = k; i< arr.length ;i++)
         {
             temp = temp + arr[i] - arr[i-k];       // The k number of each block of elements called as Window.
                                                       

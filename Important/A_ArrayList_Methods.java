@@ -1,3 +1,8 @@
+
+
+// Array List is a class in java that implements a dynamic array.
+// Which have lots of inbuild methods that make the operation efficient and optimized.
+
 import java.util.ArrayList;
 import java.util.Collections;
 
