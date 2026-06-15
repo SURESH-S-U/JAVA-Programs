@@ -22,11 +22,11 @@ public class Largest_Pallindromic_Substring{
         
         Scanner sc = new Scanner(System.in);
         
-        int largeLen = 0;
         
         String str = sc.nextLine();
         
-        int l1 = 0,l2 =0;
+        int largeLen = 0;
+        int idx1 = 0,idx2 =0;
         
         for(int i=0; i<str.length(); i++)
         {
@@ -41,15 +41,15 @@ public class Largest_Pallindromic_Substring{
                     if(subLen > largeLen)
                     {
                         largeLen = subLen;
-                        l1 = i;
-                        l2 = j;
+                        idx1 = i;
+                        idx2 = j;
                     }
                 }
             }
         }
         
         System.out.println(largeLen);
-        System.out.println(str.substring(l1,l2));
+        System.out.println(str.substring(idx1,idx2));
         
     }
 }
