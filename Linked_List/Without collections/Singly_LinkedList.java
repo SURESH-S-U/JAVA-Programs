@@ -12,16 +12,16 @@ class Node {
 
 public class Singly_LinkedList {
 
-    Node head;
+    static Node head = null;
 
-    public void insertBgn(int x) {
+    public static void insertBgn(int x) {
         Node newNode = new Node(x);
         newNode.next = head;
         head = newNode;
         System.out.println("New Value " + x + " Inserted at Beginning.");
     }
 
-    public void insertEnd(int x) {
+    public static void insertEnd(int x) {
         Node newNode = new Node(x);
 
         if (head == null) {
@@ -39,7 +39,7 @@ public class Singly_LinkedList {
         System.out.println("New Value " + x + " Inserted at End.");
     }
 
-    public void insertPos(int idx, int x) {
+    public static void insertPos(int idx, int x) {
         if (idx < 0) {
             System.out.println("Invalid index.");
             return;
@@ -51,11 +51,15 @@ public class Singly_LinkedList {
         }
 
         Node temp = head;
-        for (int i = 0; i < idx - 1 && temp != null; i++) {
+
+        int i = 0;
+        while(i < idx - 1 && temp != null)  // If temp reach null before i reach idx means invalid idx.(Out of bound)
+        {
             temp = temp.next;
+            i++;
         }
 
-        if (temp == null) {
+        if (temp == null) {         // If temp reach null before i reach idx means invalid idx.(Out of bound)
             System.out.println("Invalid index. Cannot insert.");
             return;
         }
@@ -67,7 +71,7 @@ public class Singly_LinkedList {
         System.out.println("New Value " + x + " Inserted at index: " + idx);
     }
 
-    public void delete(int idx) {
+    public static void delete(int idx) {
         if (head == null) {
             System.out.println("List is empty. Cannot delete.");
             return;
@@ -93,7 +97,7 @@ public class Singly_LinkedList {
         temp.next = temp.next.next;
     }
 
-    public void Search(int num) {
+    public static void Search(int num) {
         Node temp = head;
         while (temp != null) {
             if (temp.data == num) {
@@ -105,7 +109,7 @@ public class Singly_LinkedList {
         System.out.println("Element Not Found.");
     }
 
-    public void display() {
+    public static void display() {
         if (head == null) {
             System.out.println("List is empty.");
             return;
@@ -122,7 +126,7 @@ public class Singly_LinkedList {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Singly_LinkedList obj = new Singly_LinkedList();
+        // Singly_LinkedList obj = new Singly_LinkedList();
 
             System.out.println("\n--- Singly Linked List Menu ---");
             System.out.println("0: Insert at End");
@@ -141,36 +145,36 @@ public class Singly_LinkedList {
                 case 0:
                     System.out.print("Enter the value to insert at end: ");
                     int x0 = sc.nextInt();
-                    obj.insertEnd(x0);
+                    insertEnd(x0);
                     break;
 
                 case 1:
                     System.out.print("Enter the value to insert at beginning: ");
                     int x1 = sc.nextInt();
-                    obj.insertBgn(x1);
+                    insertBgn(x1);
                     break;
 
                 case 2:
                     System.out.print("Enter the index and value to insert: ");
                     int idx = sc.nextInt();
                     int x2 = sc.nextInt();
-                    obj.insertPos(idx, x2);
+                    insertPos(idx, x2);
                     break;
 
                 case 3:
                     System.out.print("Enter the index to delete: ");
                     int idx2 = sc.nextInt();
-                    obj.delete(idx2);
+                    delete(idx2);
                     break;
 
                 case 4:
                     System.out.print("Enter the value to search: ");
                     int num = sc.nextInt();
-                    obj.Search(num);
+                    Search(num);
                     break;
 
                 case 5:
-                    obj.display();
+                    display();
                     break;
 
                 case 6:
