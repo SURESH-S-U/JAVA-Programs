@@ -4,6 +4,7 @@ public class collections {
 	public static void main(String[] args)
 	{
 		Stack<Integer> ob = new Stack<>();
+		
 		ob.push(10);
 		ob.push(20);
 		ob.push(30);
