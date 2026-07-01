@@ -6,13 +6,16 @@ public class Selection_Sort {
 
         // Selection Sort
         for (int i = 0; i < n - 1; i++) {
+
             int minIndex = i; // Assume current element is the smallest
+
             for (int j = i + 1; j < n; j++) {
                 if (arr[j] < arr[minIndex]) {
                     minIndex = j; // Update index of smallest element
                 }
             }
-            // Swap the smallest element with the first element of the unsorted part
+
+            // Swap the smallest element with the current element.
             int temp = arr[minIndex];
             arr[minIndex] = arr[i];
             arr[i] = temp;
