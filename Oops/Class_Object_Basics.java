@@ -22,7 +22,7 @@ public class Class_Object_Basics{
 
         // Parameterized Constructor- Initialize with the user given perameters
         Students(String name, int roll, int age)
-        {
+        {   // This() method calls another constructor of the same class.
             this();    // For other variables, It will take the default values from the Default Constructor.
             this.name = name;    // this. - denote the instance variables of the calss.It is necessary because the instance and the parameter have the same variable name.
             this.roll = roll;
@@ -54,8 +54,8 @@ public class Class_Object_Basics{
         System.out.println("Name : "+s2.name+" Roll : "+s2.roll+" Age : "+s2.age+" School : "+s2.school+" Location : "+s2.location);
 
         // Instance Method calling
-        sample sam = new sample();
-        sam.summa();
+        Class_Object_Basics obj = new Class_Object_Basics();
+        obj.summa();
 
         // Static method calling
         play();

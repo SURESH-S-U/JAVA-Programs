@@ -33,6 +33,7 @@ public class A_ArrayList_Methods {
         numbers.remove(2);
         System.out.println("After removing element at index 2: " + numbers); // [10, 25, 30]
 
+
         // 7. Checking if an element exists
         System.out.println("Contains 25? " + numbers.contains(25)); // true
 
@@ -56,7 +57,7 @@ public class A_ArrayList_Methods {
         System.out.println("After reversing: " + numbers); // [40, 30, 25, 10, 5]
 
         // 13. Cloning the ArrayList
-        ArrayList<Integer> clonedList = (ArrayList<Integer>) numbers.clone();
+        ArrayList<Integer> clonedList = new ArrayList<>(numbers);
         System.out.println("Cloned List: " + clonedList); // [40, 30, 25, 10, 5]
 
         // 14. Converting ArrayList to an array

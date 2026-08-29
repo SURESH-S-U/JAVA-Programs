@@ -4,6 +4,7 @@ class Node {
     int data;
     Node next;
 
+    // Constructor to initialize a node
     Node(int x) {
         this.data = x;
         this.next = null;
@@ -12,178 +13,257 @@ class Node {
 
 public class Singly_LinkedList {
 
+    // Head of the linked list
     static Node head = null;
 
+    // ---------------- INSERT AT BEGINNING ----------------
     public static void insertBgn(int x) {
         Node newNode = new Node(x);
+
+        // New node points to current head
         newNode.next = head;
+
+        // Head becomes the new node
         head = newNode;
+
         System.out.println("New Value " + x + " Inserted at Beginning.");
     }
 
+    // ---------------- INSERT AT END ----------------
     public static void insertEnd(int x) {
+
         Node newNode = new Node(x);
 
+        // If list is empty
         if (head == null) {
             head = newNode;
-            System.out.println("New Value " + x + " Inserted at End (List was empty).");
+            System.out.println("New Value " + x + " Inserted at End.");
             return;
         }
 
+        // Traverse till the last node
         Node temp = head;
+
         while (temp.next != null) {
             temp = temp.next;
         }
 
+        // Link the last node to new node
         temp.next = newNode;
+
         System.out.println("New Value " + x + " Inserted at End.");
     }
 
+    // ---------------- INSERT AT SPECIFIC POSITION ----------------
     public static void insertPos(int idx, int x) {
+
         if (idx < 0) {
-            System.out.println("Invalid index.");
+            System.out.println("Invalid Index.");
             return;
         }
 
+        // Insert at beginning
         if (idx == 0) {
-            insertBgn(x);         // Calling the InsertBegining Function to insert at index 0;
+            insertBgn(x);
             return;
         }
 
         Node temp = head;
-
         int i = 0;
-        while(i < idx - 1 && temp != null)  // If temp reach null before i reach idx means invalid idx.(Out of bound)
-        {
+
+        // Traverse till index-1
+        while (i < idx - 1 && temp != null) {
             temp = temp.next;
             i++;
         }
 
-        if (temp == null) {         // If temp reach null before i reach idx means invalid idx.(Out of bound)
-            System.out.println("Invalid index. Cannot insert.");
+        // Invalid position
+        if (temp == null) {
+            System.out.println("Invalid Index.");
             return;
         }
 
         Node newNode = new Node(x);
+
         newNode.next = temp.next;
         temp.next = newNode;
 
-        System.out.println("New Value " + x + " Inserted at index: " + idx);
+        System.out.println("New Value " + x + " Inserted at Index " + idx);
     }
 
+    // ---------------- DELETE ----------------
     public static void delete(int idx) {
+
         if (head == null) {
-            System.out.println("List is empty. Cannot delete.");
+            System.out.println("List is Empty.");
             return;
         }
 
+        // Delete first node
         if (idx == 0) {
-            System.out.println("Element: " + head.data + " deleted.");
-            head = head.next;                         // To make the Head null. So no more values....
+            System.out.println("Deleted Element : " + head.data);
+            head = head.next;
             return;
         }
 
         Node temp = head;
+
+        // Reach node before deleting position
         for (int i = 0; i < idx - 1 && temp.next != null; i++) {
             temp = temp.next;
         }
 
         if (temp.next == null) {
-            System.out.println("Invalid index. Cannot delete.");
+            System.out.println("Invalid Index.");
             return;
         }
 
-        System.out.println("Element: " + temp.next.data + " deleted.");
+        System.out.println("Deleted Element : " + temp.next.data);
+
         temp.next = temp.next.next;
     }
 
-    public static void Search(int num) {
+    // ---------------- SEARCH ----------------
+    public static void search(int num) {
+
         Node temp = head;
+        int pos = 0;
+
         while (temp != null) {
+
             if (temp.data == num) {
-                System.out.println("Element Exists.");
+                System.out.println("Element Found at Index : " + pos);
                 return;
             }
+
             temp = temp.next;
+            pos++;
         }
+
         System.out.println("Element Not Found.");
     }
 
+    // ---------------- DISPLAY ----------------
     public static void display() {
+
         if (head == null) {
-            System.out.println("List is empty.");
+            System.out.println("List is Empty.");
             return;
         }
 
         Node temp = head;
-        System.out.print("Linked List: ");
+
+        System.out.print("Linked List : ");
+
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.println();
+
+        System.out.println("NULL");
     }
 
+    // ---------------- REVERSE LINKED LIST ----------------
+    public static void reverse() {
+
+        // Previous node
+        Node prev = null;
+
+        // Current node
+        Node curr = head;
+
+        // Store next node
+        Node next = null;
+
+        // Traverse entire list
+        while (curr != null) {
+
+            // Store next node before breaking the link
+            next = curr.next;
+
+            // Reverse the pointer
+            curr.next = prev;
+
+            // Move prev one step forward
+            prev = curr;
+
+            // Move curr one step forward
+            curr = next;
+        }
+
+        // Update head
+        head = prev;
+
+        System.out.println("Linked List Reversed Successfully.");
+    }
+
+    // ---------------- MAIN METHOD ----------------
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        // Singly_LinkedList obj = new Singly_LinkedList();
 
-            System.out.println("\n--- Singly Linked List Menu ---");
-            System.out.println("0: Insert at End");
-            System.out.println("1: Insert at Beginning");
-            System.out.println("2: Insert at Specific Position");
-            System.out.println("3: Delete at Index");
-            System.out.println("4: Search for an Element");
-            System.out.println("5: Display the List");
-            System.out.println("6: Exit");
-            System.out.print("Enter your choice: ");
-            
         while (true) {
-            int inp = sc.nextInt();
 
-            switch (inp) {
-                case 0:
-                    System.out.print("Enter the value to insert at end: ");
-                    int x0 = sc.nextInt();
-                    insertEnd(x0);
-                    break;
+            System.out.println("\n========== Singly Linked List ==========");
+            System.out.println("1. Insert at Beginning");
+            System.out.println("2. Insert at End");
+            System.out.println("3. Insert at Specific Position");
+            System.out.println("4. Delete");
+            System.out.println("5. Search");
+            System.out.println("6. Display");
+            System.out.println("7. Reverse Linked List");
+            System.out.println("8. Exit");
+            System.out.print("Enter Choice : ");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
 
                 case 1:
-                    System.out.print("Enter the value to insert at beginning: ");
-                    int x1 = sc.nextInt();
-                    insertBgn(x1);
+                    System.out.print("Enter Value : ");
+                    insertBgn(sc.nextInt());
                     break;
 
                 case 2:
-                    System.out.print("Enter the index and value to insert: ");
-                    int idx = sc.nextInt();
-                    int x2 = sc.nextInt();
-                    insertPos(idx, x2);
+                    System.out.print("Enter Value : ");
+                    insertEnd(sc.nextInt());
                     break;
 
                 case 3:
-                    System.out.print("Enter the index to delete: ");
-                    int idx2 = sc.nextInt();
-                    delete(idx2);
+                    System.out.print("Enter Index : ");
+                    int idx = sc.nextInt();
+
+                    System.out.print("Enter Value : ");
+                    int value = sc.nextInt();
+
+                    insertPos(idx, value);
                     break;
 
                 case 4:
-                    System.out.print("Enter the value to search: ");
-                    int num = sc.nextInt();
-                    Search(num);
+                    System.out.print("Enter Index to Delete : ");
+                    delete(sc.nextInt());
                     break;
 
                 case 5:
-                    display();
+                    System.out.print("Enter Element to Search : ");
+                    search(sc.nextInt());
                     break;
 
                 case 6:
-                    System.out.println("Exiting program...");
+                    display();
+                    break;
+
+                case 7:
+                    reverse();
+                    break;
+
+                case 8:
+                    System.out.println("Program Exited.");
                     sc.close();
                     return;
 
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    System.out.println("Invalid Choice.");
             }
         }
     }
